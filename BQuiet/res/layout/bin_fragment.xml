@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/binLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView 
+        android:id="@+id/binListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/mylist_divider"
+        android:listSelector="@drawable/list_selector"
+        android:background="@drawable/graybar"
+        android:dividerHeight="1dp" />
+        
+    <TextView
+        android:id="@+id/binEmptyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Hooray! Bin is Empty"
+        android:textSize="30sp"
+        tools:ignore="HardcodedText" 
+        android:visibility="gone"/>
+
+</RelativeLayout>

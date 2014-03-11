@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fencemapListLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+      <ScrollView
+    	android:id="@+id/fencePassCodeLayout"        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"         
+        android:fillViewport="true"
+        android:visibility="invisible">
+
+		<RelativeLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+    
+    	<LinearLayout
+	        android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_above="@+id/password"
+        	android:gravity="center"
+        	android:orientation="horizontal"
+        	tools:ignore="UseCompoundDrawables" >
+        
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_launcher_final"
+                tools:ignore="ContentDescription" />
+
+    		<TextView
+    		    android:id="@+id/app_name"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:text="BQuiet"
+    		    android:textSize="25sp"
+    		    tools:ignore="HardcodedText" />
+        
+    	</LinearLayout>
+    
+    	<LinearLayout
+	        android:id="@+id/password"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_above="@+id/dummyCenter"
+        	android:orientation="horizontal" >
+
+        	<EditText
+	            android:id="@+id/fencefirstPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"            
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/fencesecondPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/fencethirdPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+	
+    	    <EditText
+            	android:id="@+id/fencefourthPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+	            android:padding="20dp"
+            	android:width="50dp" />
+    	</LinearLayout>
+    
+    	<TextView
+	        android:id="@+id/dummyCenter"
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_centerVertical="true"/>
+    
+    	<TableLayout 
+	        android:id="@+id/table"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_below="@+id/dummyCenter"
+        	android:shrinkColumns="*"
+        	android:stretchColumns="*"
+        	style="?android:attr/buttonBarStyle">
+        
+        	<!-- table row 1 -->
+        	<TableRow 
+	            android:id="@+id/TabRow1"
+	            android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+            	    android:id="@+id/fenceTabBtn1"
+            	    style="?android:attr/buttonBarButtonStyle"
+            	    android:text="1"
+            	    tools:ignore="HardcodedText" />
+            
+	            <Button
+                	android:id="@+id/fenceTabBtn2"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="2"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/fenceTabBtn3"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="3"
+                	tools:ignore="HardcodedText" />
+	            
+    	    </TableRow>
+        
+	        <!-- table row 2 -->
+        	<TableRow
+	            android:id="@+id/TabRow2"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn4"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="4"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn5"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="5"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/fenceTabBtn6"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="6"
+                	tools:ignore="HardcodedText" />
+	            
+        	</TableRow>
+        
+        	<!-- table row 3 -->
+        	<TableRow
+	            android:id="@+id/TabRow3"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn7"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="7"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn8"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="8"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn9"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="9"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+        	<!-- table row 4 -->
+        	<TableRow
+	            android:id="@+id/TabRow4"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button                
+	                style="?android:attr/buttonBarButtonStyle"
+                	android:text=""/>
+            
+            	<Button
+	                android:id="@+id/fenceTabBtn10"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="0"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceTabBtnDel"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="del"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+    	</TableLayout>
+
+	</RelativeLayout>
+	</ScrollView>
+    
+    <RelativeLayout
+        android:id="@+id/fenceMapLayout" 
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:visibility="invisible">
+    	
+    	<ListView
+	        android:id="@+id/myFencesList"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:divider="@color/mylist_divider"
+        	android:listSelector="@drawable/list_selector"
+        	android:background="@drawable/graybar"
+        	android:dividerHeight="2dp" />
+    
+    	<TextView
+	        android:id="@+id/fencesEmptyTextView"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:gravity="center"
+        	android:text="No Fences"
+        	android:textSize="30sp"
+        	tools:ignore="HardcodedText" 
+        	android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

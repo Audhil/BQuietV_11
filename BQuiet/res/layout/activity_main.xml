@@ -1,0 +1,421 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_Of_All"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+    
+    <!-- Navigation Drawer -->
+    <android.support.v4.widget.DrawerLayout    
+    	android:id="@+id/drawer_layout"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@drawable/graybar"
+    	android:visibility="invisible">
+ 
+    	<!-- Framelayout to display Fragments -->
+    	<FrameLayout
+	        android:id="@+id/frame_container"
+    	    android:layout_width="match_parent"
+        	android:layout_height="match_parent" />
+ 
+    	<!-- Listview to display slider menu -->
+    	<ListView
+	        android:id="@+id/list_slidermenu"
+        	android:layout_width="240dp"
+        	android:layout_height="match_parent"
+        	android:layout_gravity="start"
+        	android:choiceMode="singleChoice"        
+        	android:listSelector="@drawable/list_selector"
+        	android:background="@drawable/graybar"/>    
+    
+	</android.support.v4.widget.DrawerLayout>
+	
+    <!-- locking screen -->
+	<ScrollView
+    	android:id="@+id/passCodeMatter"        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"         
+        android:fillViewport="true"
+        android:background="@drawable/graybar"
+        android:visibility="invisible">
+
+		<RelativeLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+    
+    	<LinearLayout
+	        android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_above="@+id/password"
+        	android:gravity="center"
+        	android:orientation="horizontal"
+        	tools:ignore="UseCompoundDrawables" >
+        
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_launcher_final"
+                tools:ignore="ContentDescription" />
+
+    		<TextView
+    		    android:id="@+id/app_name"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:text="BQuiet"
+    		    android:textSize="25sp"
+    		    tools:ignore="HardcodedText" />
+        
+    	</LinearLayout>
+    
+    	<LinearLayout
+	        android:id="@+id/password"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_above="@+id/dummyCenter"
+        	android:orientation="horizontal" >
+
+        	<EditText
+	            android:id="@+id/firstPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"            
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/secondPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/thirdPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+	
+    	    <EditText
+            	android:id="@+id/fourthPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+	            android:padding="20dp"
+            	android:width="50dp" />
+    	</LinearLayout>
+    
+    	<TextView
+	        android:id="@+id/dummyCenter"
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_centerVertical="true"/>
+    
+    	<TableLayout 
+	        android:id="@+id/table"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_below="@+id/dummyCenter"
+        	android:shrinkColumns="*"
+        	android:stretchColumns="*"
+        	style="?android:attr/buttonBarStyle">
+        
+        	<!-- table row 1 -->
+        	<TableRow 
+	            android:id="@+id/TabRow1"
+	            android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+            	    android:id="@+id/TabBtn1"
+            	    style="?android:attr/buttonBarButtonStyle"
+            	    android:text="1"
+            	    tools:ignore="HardcodedText" />
+            
+	            <Button
+                	android:id="@+id/TabBtn2"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="2"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/TabBtn3"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="3"
+                	tools:ignore="HardcodedText" />
+	            
+    	    </TableRow>
+        
+	        <!-- table row 2 -->
+        	<TableRow
+	            android:id="@+id/TabRow2"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/TabBtn4"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="4"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/TabBtn5"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="5"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/TabBtn6"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="6"
+                	tools:ignore="HardcodedText" />
+	            
+        	</TableRow>
+        
+        	<!-- table row 3 -->
+        	<TableRow
+	            android:id="@+id/TabRow3"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/TabBtn7"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="7"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/TabBtn8"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="8"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/TabBtn9"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="9"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+        	<!-- table row 4 -->
+        	<TableRow
+	            android:id="@+id/TabRow4"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button                
+	                style="?android:attr/buttonBarButtonStyle"
+                	android:text=""/>
+            
+            	<Button
+	                android:id="@+id/TabBtn10"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="0"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/TabBtnDel"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="del"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+    	</TableLayout>
+
+	</RelativeLayout>
+	</ScrollView>
+	
+	<!-- First launch page -->
+	<ScrollView   
+    	android:id="@+id/app_first_launch"      
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"                
+        android:fillViewport="true" 
+        android:background="@drawable/graybar"
+        android:visibility="invisible">
+
+		<RelativeLayout
+    		android:id="@+id/app_permission_layout"
+    		android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+    		tools:ignore="ScrollViewSize" >
+
+	    	<TextView
+        		android:id="@+id/appname"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_alignParentTop="true"
+        		android:layout_centerHorizontal="true"
+        		android:text="BQuiet"
+        		android:textAppearance="?android:attr/textAppearanceLarge"
+        		android:textSize="25sp"
+        		android:layout_marginTop="10dp"
+        		tools:ignore="HardcodedText" />
+    
+    		<ImageView
+        		android:id="@+id/imageView1"
+        		android:layout_width="match_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_above="@+id/app_personalise"
+        		android:layout_below="@+id/appname"
+        		android:src="@drawable/my_launch_screen"
+        		tools:ignore="ContentDescription" />
+
+    		<TextView
+        		android:id="@+id/app_personalise"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_centerHorizontal="true"
+        		android:layout_centerVertical="true"
+        		android:text="Personalize BQuiet"
+				android:textSize="20sp"
+        		tools:ignore="HardcodedText" />
+    
+    		<LinearLayout 
+        		android:id="@+id/app_permission_form"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        
+        		android:orientation="vertical"
+        		android:layout_below="@+id/app_personalise"
+        		android:paddingTop="10dp" >
+        
+        		<RelativeLayout 
+            		android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_gravity="center"
+        			android:layout_marginRight="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:layout_marginTop="10dp"
+        			android:layout_marginBottom="10dp">
+            	
+            		<TextView
+                		android:layout_width="wrap_content"
+                		android:layout_height="wrap_content"
+                		android:layout_alignParentLeft="true"
+                		android:text="Passcode"
+                		android:textSize="17sp"
+                		tools:ignore="HardcodedText" />
+            
+            		<CheckBox                
+                		android:id="@+id/app_passcode"
+                		android:layout_width="wrap_content"
+        				android:layout_height="wrap_content"
+        				android:layout_alignParentRight="true" />
+	            
+    		    </RelativeLayout>
+        
+        		<RelativeLayout 
+            		android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_gravity="center"
+        			android:layout_marginRight="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:layout_marginTop="10dp"
+        			android:layout_marginBottom="10dp">
+            
+            		<TextView
+                		android:layout_width="wrap_content"
+                		android:layout_height="wrap_content"
+                		android:layout_alignParentLeft="true"
+                		android:text="Enable SMS"
+                		android:textSize="17sp"
+                		tools:ignore="HardcodedText" />
+            
+            		<CheckBox                
+                		android:id="@+id/app_sms"
+                		android:layout_width="wrap_content"
+        				android:layout_height="wrap_content"
+        				android:layout_alignParentRight="true" />
+	            
+    	    	</RelativeLayout>
+        
+        		<RelativeLayout 
+            		android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:layout_gravity="center"
+        			android:layout_marginRight="20dp"
+        			android:layout_marginLeft="20dp"
+        			android:layout_marginTop="10dp"
+        			android:layout_marginBottom="10dp">
+            
+            		<TextView
+                		android:layout_width="wrap_content"
+                		android:layout_height="wrap_content"
+                		android:layout_alignParentLeft="true"
+                		android:text="Location Services"
+                		android:textSize="17sp"
+                		tools:ignore="HardcodedText" />
+	            
+    		        <CheckBox                
+                		android:id="@+id/app_location"
+                		android:layout_width="wrap_content"
+        				android:layout_height="wrap_content"
+        				android:layout_alignParentRight="true" />
+            
+        		</RelativeLayout>
+        
+    		</LinearLayout>
+    
+    		<Button
+        		android:id="@+id/app_submit"
+        		android:layout_width="match_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@+id/app_permission_form"
+        		android:layout_marginLeft="20dp"
+        		android:layout_marginRight="30dp"
+        		android:background="@drawable/button"
+        		android:paddingBottom="5dp"
+        		android:paddingTop="5dp"
+        		android:text="Let's start"
+        		tools:ignore="HardcodedText" />
+
+	</RelativeLayout>
+	</ScrollView>
+
+</RelativeLayout>

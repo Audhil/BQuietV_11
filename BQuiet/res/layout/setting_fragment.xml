@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    	xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"                
+        android:fillViewport="true" >
+        
+<RelativeLayout           
+    android:id="@+id/settingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+    <LinearLayout
+        android:id="@+id/requiredPermissionFields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:ignore="UselessParent" >
+        
+        <!-- PassCode Settings -->
+        <LinearLayout    
+        	android:layout_width="match_parent"
+    		android:layout_height="wrap_content"    		
+    		android:orientation="horizontal"
+    		android:paddingTop="20dp"
+    		android:paddingBottom="20dp">
+    		
+            <TextView    		    
+	    	    android:layout_width="0dip"
+    	    	android:layout_height="wrap_content"
+    	    	android:layout_weight="1"
+    	    	android:text="PassCode"
+    	    	android:textAppearance="?android:attr/textAppearanceLarge"
+    	    	tools:ignore="HardcodedText,DuplicateIds" />
+    	
+    		<Switch
+    	    	android:id="@+id/passCodePermissionSwitch"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:textOn="Yes"
+            	android:textOff="No"
+    	    	tools:ignore="DuplicateIds" />
+        
+    	
+    		</LinearLayout>
+    	
+        <!-- SMS Settings -->
+        <LinearLayout    
+        	android:layout_width="match_parent"
+    		android:layout_height="wrap_content"    		
+    		android:orientation="horizontal"
+    		android:paddingTop="20dp"
+    		android:paddingBottom="20dp">
+        
+    	
+    		<TextView    		    
+	    	    android:layout_width="0dip"
+    	    	android:layout_height="wrap_content"
+    	    	android:layout_weight="1"
+    	    	android:text="Send SMS"
+    	    	android:textAppearance="?android:attr/textAppearanceLarge"
+    	    	tools:ignore="HardcodedText,DuplicateIds" />
+    	
+    		<Switch
+    	    	android:id="@+id/smsPermissionSwitch"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:textOn="Yes"
+            	android:textOff="No"
+    	    	tools:ignore="DuplicateIds" />
+                
+    	</LinearLayout>
+    	
+        <!-- GeoFencing Settings -->
+        <LinearLayout    
+        	android:layout_width="match_parent"
+    		android:layout_height="wrap_content"    		
+    		android:orientation="horizontal" 
+    		android:paddingTop="20dp"
+    		android:paddingBottom="20dp">
+    		    	
+    		<TextView    		    
+	    	    android:layout_width="0dip"
+    	    	android:layout_height="wrap_content"
+    	    	android:layout_weight="1"
+    	    	android:text="Location services"
+    	    	android:textAppearance="?android:attr/textAppearanceLarge"
+    	    	tools:ignore="HardcodedText,DuplicateIds" />
+    	
+    		<Switch
+    	    	android:id="@+id/geoFencingPermissionSwitch"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+    	    	android:textOn="Yes"
+            	android:textOff="No"
+    	    	tools:ignore="DuplicateIds" />    	
+                
+    	</LinearLayout>
+        
+    </LinearLayout>
+    
+</RelativeLayout>
+</ScrollView>

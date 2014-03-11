@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wordpress.smdaudhilbe.bquiet"
+    android:versionCode="11"
+    android:versionName="1.2.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    
+    <!-- to reschedule alarm manager after reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    
+    <!-- to vibrate when we get notification -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    
+    <!-- to detect missed calls -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    
+    <!-- to send sms -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    
+    <!-- map required permission -->
+    <uses-feature 
+        android:required="true" 
+        android:glEsVersion="0x00020000"/>
+    
+    <!-- It is also needed to check for internet connectivity -->
+    <!-- It is also needed to know users current location by Location Manager -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <!-- It is also needed to know users current location by Location Manager -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    
+    <!-- It is also needed for GeoFencing -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <uses-permission android:name="com.wordpress.smdaudhilbe.bquiet.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    
+    <permission android:name="com.wordpress.smdaudhilbe.bquite.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_final"
+        android:label="@string/app_name"
+        android:theme="@style/MyTheme.Audhil" >
+        
+        <activity
+            android:name="com.wordpress.smdaudhilbe.bquiet.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">            
+        </activity>
+        
+        <!-- Splash screen -->
+        <activity 
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Map -->
+        <meta-data 
+            android:name="com.google.android.maps.v2.API_KEY" 
+            android:value="AIzaSyCgU3Cu7S7ZtIksRDmzJfqwTZbaUN08xf4"/>
+        
+        <!-- google play -->
+        <!-- android:value="AIzaSyAXj47WHRE2dY7cMkuDHvam561l5QiZ2SE"/> -->
+                
+        <meta-data 
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        
+        <!-- Map activity which holds list and a button -->
+        <activity 
+            android:name=".map.MapActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:parentActivityName="com.wordpress.smdaudhilbe.bquiet.MainActivity">            
+        </activity>
+        
+        <!-- Map fragment activity -->
+        <activity 
+            android:name=".map.MapFragmentActivity"
+            android:screenOrientation="portrait"            
+            android:windowSoftInputMode="adjustPan">                                     
+        </activity>
+        
+        <!-- Receiver for on Boot complete and respective Service -->
+        <receiver android:name=".silent.SchedulingReceiver" >            
+            <intent-filter >            
+                <!-- if user places this application in SD card then for OnBoot receiver add this action -->
+                <action android:name="android.intent.action.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE"/>                
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>          
+            </intent-filter>            
+        </receiver>
+        
+        <!-- ringermode change -->
+        <receiver android:name=".EventRingerModeChangeReceiver">
+            <intent-filter>
+                <action android:name="android.media.RINGER_MODE_CHANGED" />
+                <action android:name="android.media.VOLUME_CHANGED_ACTION" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                
+            </intent-filter>
+        </receiver>
+        
+        <!-- receiver to be triggered on entering inside geofence -->
+        <receiver 
+            android:name=".EventGeoFenceListenerReceiver"
+           	android:exported="false">
+            <intent-filter>
+                <action android:name="com.wordpress.smdaudhilbe.bquiet"/>
+            </intent-filter>
+        </receiver>
+        
+        <!-- EventSmsReceiver -->
+        <receiver android:name=".EventSmSReceiver" android:enabled="true"> 
+            <intent-filter>
+            	<action android:name="android.intent.action.PHONE_STATE" /> 
+            </intent-filter>
+        </receiver>
+        
+        <!-- Service to be executed for Silenting -->
+        <service
+    		android:name=".silent.SilentService"
+    		android:label="@string/app_name"
+    		android:exported="false">            
+		</service>
+        
+        <!-- Service to be executed for DeSilenting -->
+        <service
+    		android:name=".silent.DeSilentService"
+    		android:label="@string/app_name"
+    		android:exported="false">            
+		</service>
+		
+        <!-- For Map -->
+        <!-- Ringer mode change receiver -->
+        <receiver android:name=".RingerModeChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.media.RINGER_MODE_CHANGED" />
+                <action android:name="android.media.VOLUME_CHANGED_ACTION" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- Service to be executed on geofencing in / out -->
+        <service
+    		android:name=".map.ReceiveTransitionsIntentService"
+    		android:label="@string/app_name"
+    		android:exported="false">            
+		</service>
+		
+         <!-- Register the Sms Broadcast receiver  -->
+        <receiver android:name=".SmSReceiver" android:enabled="true"> 
+            <intent-filter>
+            	<action android:name="android.intent.action.PHONE_STATE" /> 
+            </intent-filter>
+        </receiver>
+        
+        <!-- GeoFence Preventive Receiver -->
+        <receiver
+            android:name=".GeoFencePreventiveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                
+                <!-- if user places this application in SD card then for OnBoot receiver add this action -->
+                <action android:name="android.intent.action.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE"/>
+            </intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

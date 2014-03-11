@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/eventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="1dp"
+        android:text="eventName"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/eventTimeToStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/eventTimeToStart"
+        android:layout_alignBottom="@+id/eventTimeToStart"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/eventTimeToStart"
+        android:text="TimeToStop"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/eventTimeToStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/eventTitle"
+        android:layout_below="@+id/eventTitle"
+        android:layout_marginTop="14dp"
+        android:text="TimeToStart"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

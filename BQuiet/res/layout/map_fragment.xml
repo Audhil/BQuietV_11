@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_Fragment_Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ScrollView
+    	android:id="@+id/fenceFragPassCodeLayout"        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"         
+        android:fillViewport="true"
+        android:visibility="invisible">
+
+		<RelativeLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+    
+    	<LinearLayout
+	        android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_above="@+id/password"
+        	android:gravity="center"
+        	android:orientation="horizontal"
+        	tools:ignore="UseCompoundDrawables" >
+        
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_launcher_final"
+                tools:ignore="ContentDescription" />
+
+    		<TextView
+    		    android:id="@+id/app_name"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:text="BQuiet"
+    		    android:textSize="25sp"
+    		    tools:ignore="HardcodedText" />
+        
+    	</LinearLayout>
+    
+    	<LinearLayout
+	        android:id="@+id/password"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_above="@+id/dummyCenter"
+        	android:orientation="horizontal" >
+
+        	<EditText
+	            android:id="@+id/fenceFragfirstPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"            
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/fenceFragsecondPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+
+        	<EditText
+	            android:id="@+id/fenceFragthirdPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+            	android:padding="20dp"
+            	android:width="50dp" />
+	
+    	    <EditText
+            	android:id="@+id/fenceFragfourthPassCodeNum"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="10dp"
+            	android:background="@drawable/borderlines"
+            	android:focusable="false"            
+            	android:inputType="number"            
+            	android:ems="1"            
+            	android:lines="1"
+            	android:maxLength="1"
+            	android:maxLines="1"
+            	android:minLines="1"
+	            android:padding="20dp"
+            	android:width="50dp" />
+    	</LinearLayout>
+    
+    	<TextView
+	        android:id="@+id/dummyCenter"
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_centerVertical="true"/>
+    
+    	<TableLayout 
+	        android:id="@+id/table"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_below="@+id/dummyCenter"
+        	android:shrinkColumns="*"
+        	android:stretchColumns="*"
+        	style="?android:attr/buttonBarStyle">
+        
+        	<!-- table row 1 -->
+        	<TableRow 
+	            android:id="@+id/TabRow1"
+	            android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+            	    android:id="@+id/fenceFragTabBtn1"
+            	    style="?android:attr/buttonBarButtonStyle"
+            	    android:text="1"
+            	    tools:ignore="HardcodedText" />
+            
+	            <Button
+                	android:id="@+id/fenceFragTabBtn2"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="2"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/fenceFragTabBtn3"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="3"
+                	tools:ignore="HardcodedText" />
+	            
+    	    </TableRow>
+        
+	        <!-- table row 2 -->
+        	<TableRow
+	            android:id="@+id/TabRow2"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn4"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="4"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn5"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="5"
+                	tools:ignore="HardcodedText" />
+	            
+    	        <Button
+                	android:id="@+id/fenceFragTabBtn6"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="6"
+                	tools:ignore="HardcodedText" />
+	            
+        	</TableRow>
+        
+        	<!-- table row 3 -->
+        	<TableRow
+	            android:id="@+id/TabRow3"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn7"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="7"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn8"
+    	            style="?android:attr/buttonBarButtonStyle"
+                	android:text="8"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn9"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="9"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+        	<!-- table row 4 -->
+        	<TableRow
+	            android:id="@+id/TabRow4"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="2dp">
+            
+            	<Button                
+	                style="?android:attr/buttonBarButtonStyle"
+                	android:text=""/>
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtn10"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="0"
+                	tools:ignore="HardcodedText" />
+            
+            	<Button
+	                android:id="@+id/fenceFragTabBtnDel"
+                	style="?android:attr/buttonBarButtonStyle"
+                	android:text="del"
+                	tools:ignore="HardcodedText" />
+            
+        	</TableRow>
+        
+    	</TableLayout>
+
+	</RelativeLayout>
+	</ScrollView>
+    
+
+    <RelativeLayout 
+        android:id="@+id/actualMapFrag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+		
+    <!-- Map -->
+    <fragment
+        android:id="@+id/MyMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment" />
+
+    <!-- Event Details -->
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#80000000"
+        android:orientation="vertical" >
+
+        <!-- Event Name -->
+
+        <EditText 
+            android:privateImeOptions="nm"
+            android:id="@+id/mapEventNameEText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Name"            
+            android:maxLength="20"
+            android:singleLine="true"
+            android:inputType="textVisiblePassword"
+            android:textColor="@android:color/white"
+            tools:ignore="HardcodedText" />
+
+        <!-- Sms -->
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <EditText 
+                android:privateImeOptions="nm"
+                android:id="@+id/mapSmsContentEText"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="SMS text"
+                android:textColor="@android:color/white"
+                tools:ignore="HardcodedText" />
+
+            <Switch
+                android:id="@+id/mapSmsSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textOff="No"
+                android:textOn="Yes" />
+        </LinearLayout>
+
+        <!-- Radius of GeoFence -->
+
+        <EditText android:privateImeOptions="nm"
+            android:id="@+id/mapRadiusEText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="Fence radius"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <!-- Buttons -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/mapCancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#80000000"
+            android:onClick="CancelClicked"
+            android:padding="10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            tools:ignore="ButtonStyle,HardcodedText" />
+
+        <Button
+            android:id="@+id/mapSaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#80000000"
+            android:onClick="SaveClicked"
+            android:padding="10dp"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            tools:ignore="ButtonStyle,HardcodedText" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/changeMapView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linear1"
+        android:background="#80000000"
+        android:onClick="changeMapViewClicked"
+        android:text="H"
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText" />
+    
+    </RelativeLayout>
+
+</RelativeLayout>
